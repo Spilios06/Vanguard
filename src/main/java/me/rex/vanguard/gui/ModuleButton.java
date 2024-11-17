@@ -1,15 +1,10 @@
 package me.rex.vanguard.gui;
 
 import me.rex.vanguard.VanguardClient;
-import me.rex.vanguard.gui.setting.BoolBox;
+import me.rex.vanguard.gui.setting.*;
 import me.rex.vanguard.gui.setting.Component;
-import me.rex.vanguard.gui.setting.EnumBox;
-import me.rex.vanguard.gui.setting.NumberBox;
 import me.rex.vanguard.module.Module;
-import me.rex.vanguard.settings.BoolSetting;
-import me.rex.vanguard.settings.EnumSetting;
-import me.rex.vanguard.settings.NumberSetting;
-import me.rex.vanguard.settings.Setting;
+import me.rex.vanguard.settings.*;
 import net.minecraft.client.gui.DrawContext;
 
 import java.awt.*;
@@ -39,6 +34,8 @@ public class ModuleButton {
                 components.add(new NumberBox(setting, this, setOffset));
             } else if(setting instanceof EnumSetting){
                 components.add(new EnumBox(setting, this, setOffset));
+            } else if (setting instanceof BindSetting) {
+                components.add(new BindBox(setting, this, setOffset));
             }
         }
     }

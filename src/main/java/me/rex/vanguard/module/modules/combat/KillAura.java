@@ -6,6 +6,6 @@ import org.lwjgl.glfw.GLFW;
 
 public class KillAura extends Module {
     public KillAura() {
-        super("Kill Aura", Category.COMBAT, GLFW.GLFW_KEY_K, false);
+        super("Kill Aura", Category.COMBAT, -1, false);
     }
 }

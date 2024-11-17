@@ -8,7 +8,7 @@ import org.lwjgl.glfw.GLFW;
 public class Step extends Module {
     public float stepHeight = mc.player.getStepHeight();
     public Step(){
-        super("Step", Category.MOVEMENT, GLFW.GLFW_KEY_Q, false);
+        super("Step", Category.MOVEMENT, -1, false);
     }
     @Override
     public void onDisable(){

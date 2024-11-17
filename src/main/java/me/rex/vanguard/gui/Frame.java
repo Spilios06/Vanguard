@@ -64,4 +64,12 @@ public class Frame {
             }
         }
     }
+
+    public void onKeyPressed(int keyCode) {
+        for(ModuleButton button : buttons){
+            for(Component component : button.components){
+                component.onKeyPressed(keyCode);
+            }
+        }
+    }
 }

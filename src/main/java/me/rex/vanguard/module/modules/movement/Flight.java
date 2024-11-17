@@ -10,7 +10,7 @@ public class Flight extends Module {
     public NumberSetting speed = new NumberSetting("Speed", 0, 10, 2);
     public BoolSetting bypass = new BoolSetting("Anti Kick", false);
     public Flight() {
-        super("Flight", Category.MOVEMENT, GLFW.GLFW_KEY_R, false);
+        super("Flight", Category.MOVEMENT, -1, false);
         addSettings(speed, bypass);
     }
     @Override

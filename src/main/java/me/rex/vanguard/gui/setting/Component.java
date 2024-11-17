@@ -37,4 +37,8 @@ public class Component {
     public boolean isHovered(double mouseX, double mouseY) {
         return mouseX >= parent.parent.x && mouseX <= parent.parent.x + parent.parent.width && mouseY >= parent.parent.y + offset && mouseY <= parent.parent.y + offset + parent.parent.height;
     }
+
+    public void onKeyPressed(int key) {
+
+    }
 }

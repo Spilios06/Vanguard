@@ -11,7 +11,7 @@ import java.util.List;
 public class TestingPlayer extends Module{
     private static final List<TestPlayerUtil> ENTITIES = new ArrayList<>();
     public TestingPlayer(){
-        super("TestingPlayer", Category.MISC, GLFW.GLFW_KEY_Y, false);
+        super("TestingPlayer", Category.MISC, -1, false);
     }
     @Override
     public void onEnable(){

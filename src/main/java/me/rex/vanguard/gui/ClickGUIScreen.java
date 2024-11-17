@@ -43,4 +43,10 @@ public class ClickGUIScreen extends Screen {
     protected void init() {
         super.init();
     }
+
+    @Override
+    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
+        this.frames.forEach(component -> component.onKeyPressed(keyCode));
+        return super.keyPressed(keyCode, scanCode, modifiers);
+    }
 }

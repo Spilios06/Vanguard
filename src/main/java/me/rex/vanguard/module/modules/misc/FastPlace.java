@@ -7,7 +7,7 @@ import org.lwjgl.glfw.GLFW;
 
 public class FastPlace extends Module {
     public FastPlace() {
-        super("FastPlace", Category.MISC, GLFW.GLFW_KEY_B, false);
+        super("FastPlace", Category.MISC, -1, false);
     }
     @Override
     public void onTick() {
