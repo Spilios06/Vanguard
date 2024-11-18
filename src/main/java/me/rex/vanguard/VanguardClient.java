@@ -1,6 +1,7 @@
 package me.rex.vanguard;
 
 import me.rex.vanguard.event.EventManager;
+import me.rex.vanguard.gui.ClickGUIScreen;
 import me.rex.vanguard.module.ModuleManager;
 import me.rex.vanguard.module.Module;
 import net.fabricmc.api.ClientModInitializer;
@@ -31,6 +32,7 @@ public class VanguardClient implements ClientModInitializer, ModInitializer{
 	public void onKeyPress(int key, int action){
 		if(mc.player == null) return;
 		if(action == GLFW.GLFW_PRESS) {
+			if (mc.currentScreen instanceof ClickGUIScreen && key == GLFW.GLFW_KEY_ESCAPE) ModuleManager.INSTANCE.getModuleByName("ClickGUI").toggle();
 			for(Module module : ModuleManager.INSTANCE.modules){
 				if(key == module.key){
 					module.toggle();
