@@ -23,8 +23,8 @@ public class BindBox extends Component{
         if (this.isListening) {
             context.drawTextWithShadow(VanguardClient.INSTANCE.mc.textRenderer, "Press a Key...", parent.parent.x + 2, parent.parent.y + offset + 2, -1);
         } else {
-            String str = String.valueOf(this.bindSetting.getValue()); //Displays keybind as an integer not as a character, need to fix
-            //String str = GLFW.glfwGetKeyName(this.bindSetting.getValue(), GLFW.glfwGetKeyScancode(this.bindSetting.getValue()));
+            String str = GLFW.glfwGetKeyName(this.bindSetting.getValue(), GLFW.glfwGetKeyScancode(this.bindSetting.getValue()));
+            if (str == null) str = "KEY.KEYBOARD." + this.bindSetting.getValue();
             str = str.replace("KEY.KEYBOARD", "").replace(".", " ");
             context.drawTextWithShadow(VanguardClient.INSTANCE.mc.textRenderer, this.setting.name + " " + str, parent.parent.x + 2, parent.parent.y + offset + 2, -1);
         }
