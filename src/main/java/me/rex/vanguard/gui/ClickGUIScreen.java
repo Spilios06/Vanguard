@@ -49,4 +49,17 @@ public class ClickGUIScreen extends Screen {
         this.frames.forEach(component -> component.onKeyPressed(keyCode));
         return super.keyPressed(keyCode, scanCode, modifiers);
     }
+
+    @Override
+    public boolean mouseReleased(double mouseX, double mouseY, int button) {
+        this.frames.forEach(component -> component.mouseReleased(mouseX, mouseY, button));
+        super.mouseReleased(mouseX, mouseY, button);
+        return true;
+    }
+
+    @Override
+    public boolean mouseDragged(double mouseX, double mouseY, int button, double deltaX, double deltaY) {
+        this.frames.forEach(component -> component.mouseDragged(mouseX, mouseY));
+        return super.mouseDragged(mouseX, mouseY, button, deltaX, deltaY);
+    }
 }

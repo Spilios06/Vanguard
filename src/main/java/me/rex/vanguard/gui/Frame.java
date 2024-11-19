@@ -72,4 +72,20 @@ public class Frame {
             }
         }
     }
+
+    public void mouseReleased(double mouseX, double mouseY, int button) {
+        for(ModuleButton button1 : buttons){
+            for(Component component : button1.components){
+                component.mouseReleased(mouseX, mouseY, button);
+            }
+        }
+    }
+
+    public void mouseDragged(double mouseX, double mouseY) {
+        for(ModuleButton button : buttons){
+            for(Component component : button.components){
+                component.mouseDragged(mouseX, mouseY);
+            }
+        }
+    }
 }

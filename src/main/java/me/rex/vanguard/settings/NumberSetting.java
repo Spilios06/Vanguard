@@ -8,6 +8,7 @@ public class NumberSetting extends Setting{
         this.min = min;
         this.max = max;
         this.defaultValue = defaultValue;
+        this.value = defaultValue;
     }
     public static double clamp(double value, double min, double max){
         value = Math.max(min, value);
