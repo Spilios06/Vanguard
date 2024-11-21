@@ -1,5 +1,6 @@
 package me.rex.vanguard.module;
 
+import me.rex.vanguard.settings.BindSetting;
 import me.rex.vanguard.settings.Setting;
 import net.minecraft.client.MinecraftClient;
 

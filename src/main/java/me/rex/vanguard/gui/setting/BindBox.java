@@ -40,6 +40,7 @@ public class BindBox extends Component{
             bind = new BindSetting(-1, "Keybind");
         }
         this.bindSetting.value = bind.value;
+        this.bindSetting.setValue(bind.value, parent.module);
         this.isListening = false;
     }
 
