@@ -2,16 +2,17 @@ package me.rex.vanguard.module.modules.misc;
 
 import me.rex.vanguard.module.Category;
 import me.rex.vanguard.module.Module;
+import me.rex.vanguard.settings.BindSetting;
 import me.rex.vanguard.utils.TestPlayerUtil;
-import org.lwjgl.glfw.GLFW;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TestingPlayer extends Module{
+    public BindSetting bind = new BindSetting(-1, "Bind");
     private static final List<TestPlayerUtil> ENTITIES = new ArrayList<>();
     public TestingPlayer(){
-        super("TestingPlayer", Category.MISC, -1, false);
+        super("TestingPlayer", Category.MISC, -1);
     }
     @Override
     public void onEnable(){

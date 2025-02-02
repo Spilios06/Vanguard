@@ -3,6 +3,7 @@ package me.rex.vanguard.settings;
 public class NumberSetting extends Setting{
     public double min, max, defaultValue;
     public double value;
+
     public NumberSetting(String name, double min, double max, double defaultValue) {
         super(name);
         this.min = min;
@@ -18,12 +19,25 @@ public class NumberSetting extends Setting{
     public float getValueFloat(){
         return (float)value;
     }
+
     public int getValueInt(){
         return (int)value;
     }
-    public void setValue(double value){
-        value = clamp(value, this.min, this.max);
-        value  = Math.round(value);
-        this.value = value;
+
+    @Override
+    public String getType() {
+        return "Double";
+    }
+
+    @Override
+    public void setValue(Object value) {
+        value = clamp((double) value, this.min, this.max);
+        value  = Math.round((double) value);
+        this.value = (double) value;
+    }
+
+    @Override
+    public String getValueAsString() {
+        return String.valueOf(value);
     }
 }

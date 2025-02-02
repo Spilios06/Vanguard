@@ -3,7 +3,7 @@ package me.rex.vanguard.gui;
 import me.rex.vanguard.gui.setting.Component;
 import me.rex.vanguard.module.Category;
 import me.rex.vanguard.module.Module;
-import me.rex.vanguard.module.ModuleManager;
+import me.rex.vanguard.manager.ModuleManager;
 import net.minecraft.client.gui.DrawContext;
 import me.rex.vanguard.VanguardClient;
 

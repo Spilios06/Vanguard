@@ -8,4 +8,10 @@ public abstract class Setting {
         this.name = name;
         this.visible = true;
     }
+
+    public abstract String getType();
+
+    public abstract void setValue(Object value);
+
+    public abstract String getValueAsString();
 }

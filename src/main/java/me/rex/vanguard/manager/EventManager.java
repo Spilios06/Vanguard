@@ -3,7 +3,8 @@ package me.rex.vanguard.manager;
 import com.google.common.eventbus.EventBus;
 
 public class EventManager{
-    private final EventBus EVENT_BUS = new EventBus();
+    public static final EventManager INSTANCE = new EventManager();
+    private static final EventBus EVENT_BUS = new EventBus();
 
     public void init() {
         EVENT_BUS.register(this);

@@ -5,14 +5,13 @@ import me.rex.vanguard.module.Module;
 import me.rex.vanguard.settings.BindSetting;
 import me.rex.vanguard.settings.BoolSetting;
 import me.rex.vanguard.settings.NumberSetting;
-import org.lwjgl.glfw.GLFW;
 
 public class Flight extends Module {
     public NumberSetting speed = new NumberSetting("Speed", 0, 10, 2);
     public BoolSetting bypass = new BoolSetting("Anti Kick", false);
     public BindSetting bind = new BindSetting(-1, "Bind");
     public Flight() {
-        super("Flight", Category.MOVEMENT, -1, false);
+        super("Flight", Category.MOVEMENT, -1);
         addSettings(speed, bypass, bind);
     }
     @Override
