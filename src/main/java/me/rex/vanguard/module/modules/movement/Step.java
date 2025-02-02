@@ -9,7 +9,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 public class Step extends Module {
     public NumberSetting height = new NumberSetting("Height", 1f, 5f, 2f);
     public BindSetting bind = new BindSetting(-1, "Bind");
-    public float stepHeight = mc.player.getStepHeight();
+    public float stepHeight;
     public Step(){
         super("Step", Category.MOVEMENT, -1);
         addSettings(height);
@@ -22,7 +22,8 @@ public class Step extends Module {
 
     @Override
     public void onEnable() {
-        assert mc.player != null;
+        if(mc.player == null) return;
+        stepHeight = mc.player.getStepHeight();
         mc.player.getAttributeInstance(EntityAttributes.GENERIC_STEP_HEIGHT).setBaseValue(height.getValueFloat());
     }
 }

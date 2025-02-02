@@ -46,7 +46,7 @@ public class ConfigManager {
         }
     }
 
-    public void load() {
+    public void load() { //TODO: Fix this
         if (!ClientPath.toFile().exists()) ClientPath.toFile().mkdirs();
         for (Jsonable jsonable : jsonables) {
             try {

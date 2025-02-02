@@ -56,7 +56,7 @@ public class NumberBox extends Component {
             int sliderX = parent.parent.x + 2;
             int sliderWidth = parent.parent.width - 4;
             double newValue = NumberSetting.min + (mouseX - sliderX) / sliderWidth * (NumberSetting.max - NumberSetting.min);
-            NumberSetting.setValue(Math.min(NumberSetting.max, Math.max(NumberSetting.min, newValue))); // Clamp to min/max
+            NumberSetting.setValueDouble(Math.min(NumberSetting.max, Math.max(NumberSetting.min, newValue))); // Clamp to min/max
         }
     }
     // Helper method to calculate the slider value based on mouse position
@@ -65,6 +65,6 @@ public class NumberBox extends Component {
         int sliderWidth = parent.parent.width - 4;
         // Ensure the mouseX value stays within the slider bounds
         double newValue = NumberSetting.min + (mouseX - sliderX) / sliderWidth * (NumberSetting.max - NumberSetting.min);
-        NumberSetting.setValue(Math.min(NumberSetting.max, Math.max(NumberSetting.min, newValue))); // Clamp value within min and max
+        NumberSetting.setValueDouble(Math.min(NumberSetting.max, Math.max(NumberSetting.min, newValue))); // Clamp value within min and max
     }
 }

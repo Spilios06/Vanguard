@@ -11,6 +11,7 @@ public class Velocity extends Module {
     public Velocity() {
         super("Velocity", Category.MOVEMENT, -1);
     }
+
     @Subscribe
     private void onPacketReceive(PacketEvent.Receive event) {
         if (event.getPacket() instanceof EntityVelocityUpdateS2CPacket || event.getPacket() instanceof ExplosionS2CPacket) {

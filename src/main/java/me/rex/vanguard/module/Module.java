@@ -49,7 +49,6 @@ public abstract class Module implements Jsonable {
 
     @Subscribe
     public void onKeyPress(KeyPressEvent event){
-        VanguardClient.logger.info("Received Key Press Event");
         if(event.key == key){
             toggle();
         }

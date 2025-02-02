@@ -16,7 +16,7 @@ public class VanguardClient implements ClientModInitializer, ModInitializer{
 	public static final VanguardClient INSTANCE = new VanguardClient();
 	public static final Logger logger = LoggerFactory.getLogger("vanguard");
 	public MinecraftClient mc = MinecraftClient.getInstance();
-	public static EventManager eventManager = new EventManager();
+	public static EventManager eventManager = EventManager.INSTANCE;
 	public static ConfigManager configManager = ConfigManager.INSTANCE;
 
 	@Override

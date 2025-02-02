@@ -29,6 +29,12 @@ public class NumberSetting extends Setting{
         return "Double";
     }
 
+    public void setValueDouble(double value){
+        value = clamp(value, this.min, this.max);
+        value = Math.round(value);
+        this.value = value;
+    }
+
     @Override
     public void setValue(Object value) {
         value = clamp((double) value, this.min, this.max);
