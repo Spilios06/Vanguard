@@ -32,7 +32,12 @@ public class EnumSetting extends Setting{
 
     @Override
     public void setValue(Object value) {
-        this.defaultMode = (Enum) value; //TODO: Implement this somehow
+        for(Enum mode : modes){
+            if(mode.name().equals(name)){
+                this.defaultMode = mode;
+                return;
+            }
+        }
     }
 
     @Override
