@@ -11,6 +11,7 @@ public class Step extends Module {
     public float stepHeight = mc.player.getStepHeight();
     public Step(){
         super("Step", Category.MOVEMENT, -1, false);
+        addSettings(height);
     }
     @Override
     public void onDisable(){

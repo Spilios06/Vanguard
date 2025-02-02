@@ -1,5 +1,7 @@
 package me.rex.vanguard.module;
 
+import com.google.common.eventbus.EventBus;
+import me.rex.vanguard.VanguardClient;
 import me.rex.vanguard.settings.BindSetting;
 import me.rex.vanguard.settings.Setting;
 import net.minecraft.client.MinecraftClient;
@@ -8,9 +10,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static me.rex.vanguard.utils.EventUtil.EVENT_BUS;
-
-public class Module {
+public abstract class Module {
+    private final EventBus EVENT_BUS = VanguardClient.eventManager.getEventBus();
     public String description;
     public String name;
     public Category category;

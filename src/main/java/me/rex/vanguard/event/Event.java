@@ -1,6 +1,6 @@
 package me.rex.vanguard.event;
 
-public class Event {
+public abstract class Event {
     private boolean cancelled;
 
     public boolean isCancelled() {

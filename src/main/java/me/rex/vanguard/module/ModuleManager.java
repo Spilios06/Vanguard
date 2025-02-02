@@ -6,6 +6,7 @@ import me.rex.vanguard.module.modules.combat.KillAura;
 import me.rex.vanguard.module.modules.misc.FastPlace;
 import me.rex.vanguard.module.modules.misc.TestingPlayer;
 import me.rex.vanguard.module.modules.movement.*;
+import me.rex.vanguard.module.modules.player.AutoRespawn;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,7 @@ public class ModuleManager {
         //RENDER
 
         //PLAYER
+        modules.add(new AutoRespawn());
 
         //MISC
         modules.add(new TestingPlayer());

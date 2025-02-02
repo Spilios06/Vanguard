@@ -1,13 +1,12 @@
 package me.rex.vanguard.gui.setting;
 
-import me.rex.vanguard.VanguardClient;
 import me.rex.vanguard.gui.ModuleButton;
 import me.rex.vanguard.settings.Setting;
 import net.minecraft.client.gui.DrawContext;
 
 import java.awt.*;
 
-public class Component {
+public abstract class Component {
 
     public Setting setting;
     public ModuleButton parent;
@@ -45,10 +44,4 @@ public class Component {
 
     public void mouseDragged(double mouseX, double mouseY){}
 
-    public void startDragging(double mouseX, double mouseY, int button) {
-        if (isHovered(mouseX, mouseY) && button == 0) { // Only start dragging on left mouse button
-            dragging = true;  // Mark as dragging
-            mouseClicked(mouseX, mouseY, button);  // Optionally override for custom click behavior
-        }
-    }
 }

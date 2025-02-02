@@ -1,7 +1,9 @@
 package me.rex.vanguard.mixin;
 
+import com.google.common.eventbus.EventBus;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
+import me.rex.vanguard.VanguardClient;
 import me.rex.vanguard.event.events.PacketEvent;
 import net.minecraft.network.ClientConnection;
 import net.minecraft.network.NetworkSide;
@@ -10,14 +12,16 @@ import net.minecraft.network.packet.Packet;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import static me.rex.vanguard.utils.EventUtil.EVENT_BUS;
 
 @Mixin( ClientConnection.class )
 public class MixinClientConnection {
+    @Unique
+    private final EventBus EVENT_BUS = VanguardClient.eventManager.getEventBus();
 
     @Shadow private Channel channel;
     @Shadow @Final private NetworkSide side;

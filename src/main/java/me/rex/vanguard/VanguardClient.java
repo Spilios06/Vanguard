@@ -1,13 +1,12 @@
 package me.rex.vanguard;
 
-import me.rex.vanguard.event.EventManager;
+import me.rex.vanguard.manager.EventManager;
 import me.rex.vanguard.gui.ClickGUIScreen;
 import me.rex.vanguard.module.ModuleManager;
 import me.rex.vanguard.module.Module;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.MinecraftClient;
-import org.apache.logging.log4j.LogManager;
 import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
