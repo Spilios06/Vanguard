@@ -13,8 +13,8 @@ public class MCF extends Module {
 
     @Override
     public void onKeyPress(KeyPressEvent event) {
-        if(event.key == GLFW.GLFW_MOUSE_BUTTON_MIDDLE) {
-            FriendManager.INSTANCE.friends.add(""); //TODO: get the name of the player the player is looking and add check if the crosshair is on a player entity within a certain range
+        if(event.key == GLFW.GLFW_MOUSE_BUTTON_MIDDLE && mc.targetedEntity != null) {
+            FriendManager.INSTANCE.friends.add(String.valueOf(mc.targetedEntity.getName()));
         }
     }
 }

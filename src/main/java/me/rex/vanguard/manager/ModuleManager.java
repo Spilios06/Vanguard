@@ -7,6 +7,7 @@ import me.rex.vanguard.module.Category;
 import me.rex.vanguard.module.Module;
 import me.rex.vanguard.module.modules.client.ClickGUI;
 import me.rex.vanguard.module.modules.combat.AutoCrystal;
+import me.rex.vanguard.module.modules.combat.Criticals;
 import me.rex.vanguard.module.modules.combat.KillAura;
 import me.rex.vanguard.module.modules.misc.FastPlace;
 import me.rex.vanguard.module.modules.misc.TestingPlayer;
@@ -23,6 +24,7 @@ public class ModuleManager implements Jsonable {
         //COMBAT
         modules.add(new AutoCrystal());
         modules.add(new KillAura());
+        modules.add(new Criticals());
 
         //MOVEMENT
         modules.add(new Sprint());

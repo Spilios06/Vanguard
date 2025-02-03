@@ -12,7 +12,7 @@ public class Step extends Module {
     public float stepHeight;
     public Step(){
         super("Step", Category.MOVEMENT, -1);
-        addSettings(height);
+        addSettings(height, bind);
     }
     @Override
     public void onDisable(){

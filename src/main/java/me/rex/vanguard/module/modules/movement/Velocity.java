@@ -1,5 +1,6 @@
 package me.rex.vanguard.module.modules.movement;
 
+import me.rex.vanguard.event.events.RecievePacketEvent;
 import me.rex.vanguard.module.Category;
 import me.rex.vanguard.module.Module;
 import me.rex.vanguard.event.events.PacketEvent;
@@ -13,7 +14,7 @@ public class Velocity extends Module {
     }
 
     @Subscribe
-    private void onPacketReceive(PacketEvent.Receive event) {
+    private void onPacketReceive(RecievePacketEvent event) {
         if (event.getPacket() instanceof EntityVelocityUpdateS2CPacket || event.getPacket() instanceof ExplosionS2CPacket) {
             event.cancel();
         }

@@ -45,5 +45,7 @@ public class EnumSetting extends Setting{
         return defaultMode.name();
     }
 
-
+    public Enum getValue(){
+        return defaultMode;
+    }
 }

@@ -5,6 +5,8 @@ import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import me.rex.vanguard.VanguardClient;
 import me.rex.vanguard.event.events.PacketEvent;
+import me.rex.vanguard.event.events.RecievePacketEvent;
+import me.rex.vanguard.event.events.SendPacketEvent;
 import net.minecraft.network.ClientConnection;
 import net.minecraft.network.NetworkSide;
 import net.minecraft.network.PacketCallbacks;
@@ -26,16 +28,14 @@ public class MixinClientConnection {
     @Shadow private Channel channel;
     @Shadow @Final private NetworkSide side;
 
-    @Inject(method = "channelRead0", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "channelRead0*", at = @At("HEAD"), cancellable = true)
     public void channelRead0(ChannelHandlerContext chc, Packet<?> packet, CallbackInfo ci) {
         if (this.channel.isOpen() && packet != null) {
             try {
-                PacketEvent.Receive event = new PacketEvent.Receive(packet);
+                RecievePacketEvent event = new RecievePacketEvent(packet);
                 EVENT_BUS.post(event);
-                if (event.isCancelled())
-                    ci.cancel();
-            } catch (Exception e) {
-            }
+                if (event.isCancelled()) ci.cancel();
+            } catch (Exception ignored) {}
         }
     }
 
@@ -43,12 +43,9 @@ public class MixinClientConnection {
     private void sendImmediately(Packet<?> packet, PacketCallbacks callbacks, boolean flush, CallbackInfo ci) {
         if (this.side != NetworkSide.CLIENTBOUND) return;
         try {
-            PacketEvent.Send event = new PacketEvent.Send(packet);
+            SendPacketEvent event = new SendPacketEvent(packet);
             EVENT_BUS.post(event);
             if (event.isCancelled()) ci.cancel();
-        } catch (Exception e) {
-        }
+        } catch (Exception ignored) {}
     }
-
-
 }

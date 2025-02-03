@@ -13,6 +13,7 @@ public class TestingPlayer extends Module{
     private static final List<TestPlayerUtil> ENTITIES = new ArrayList<>();
     public TestingPlayer(){
         super("TestingPlayer", Category.MISC, -1);
+        addSettings(bind);
     }
     @Override
     public void onEnable(){

@@ -9,5 +9,6 @@ public class KillAura extends Module {
 
     public KillAura() {
         super("Kill Aura", Category.COMBAT, -1);
+        settings.add(bind);
     }
 }

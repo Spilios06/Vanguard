@@ -75,7 +75,7 @@ public abstract class Module implements Jsonable {
         if (Boolean.parseBoolean(enabled)) toggle();
         for (Setting setting : settings) {
             try {
-                ConfigManager.setValueFromJson(this, setting, object.get(setting.name));
+                ConfigManager.setValueFromJson(setting, object.get(setting.name));
             }catch (Throwable ignored) {
             }
         }

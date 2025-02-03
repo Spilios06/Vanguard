@@ -23,7 +23,7 @@ public class ConfigManager {
             .create();
     private final List<Jsonable> jsonables = List.of(FriendManager.INSTANCE, ModuleManager.INSTANCE);
 
-    public static void setValueFromJson(Module module, Setting setting, JsonElement element) {
+    public static void setValueFromJson(Setting setting, JsonElement element) {
         String str;
         switch (setting.getType()) {
             case "Boolean" -> {
