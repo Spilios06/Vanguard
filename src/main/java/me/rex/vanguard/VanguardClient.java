@@ -22,6 +22,7 @@ public class VanguardClient implements ClientModInitializer, ModInitializer{
 	@Override
 	public void onInitialize() {
 		configManager.load();
+		logger.info("Config Loaded");
 		Runtime.getRuntime().addShutdownHook(new Thread(() -> configManager.save()));
 	}
 

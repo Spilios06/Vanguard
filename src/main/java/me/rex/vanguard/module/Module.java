@@ -57,6 +57,8 @@ public abstract class Module implements Jsonable {
     @Override
     public JsonObject toJson() {
         JsonObject object = new JsonObject();
+        if(enabled) object.addProperty("Enabled", "true");
+        else object.addProperty("Enabled", "false");
         for (Setting setting : settings) {
             try {
                 object.addProperty(setting.name, setting.getValueAsString());
