@@ -3,7 +3,7 @@ name: release
 on:
   push:
     tags:
-      - 'v*' # Triggers on version tags like v1.0.0
+      - 'v*'
 
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
 
       - name: Get JAR file
         id: get_jar
-        run: echo "JAR_PATH=$(find build/libs -name '*.jar' | head -n 1)" >> $GITHUB_ENV
+        run: echo "JAR_PATH=$(find build/libs -name 'vanguard-*.jar' | head -n 1)" >> $GITHUB_ENV
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
