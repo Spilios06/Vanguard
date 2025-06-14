@@ -31,11 +31,8 @@ public abstract class Module implements Jsonable {
     }
     public void toggle(){
         this.enabled = !this.enabled;
-        if(enabled){
-            onEnable();
-        }else{
-            onDisable();
-        }
+        if(enabled) onEnable();
+        else onDisable();
     }
     public void onEnable(){
     }
@@ -49,9 +46,7 @@ public abstract class Module implements Jsonable {
 
     @Subscribe
     public void onKeyPress(KeyPressEvent event){
-        if(event.key == key){
-            toggle();
-        }
+        if(event.key == key) toggle();
     }
 
     @Override
