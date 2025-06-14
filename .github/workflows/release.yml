@@ -30,7 +30,7 @@ jobs:
 
       - name: Get JAR file
         id: get_jar
-        run: echo "JAR_PATH=$(find build/libs -name 'vanguard-*.jar' | head -n 1)" >> $GITHUB_ENV
+        run: echo "JAR_PATH=$(find build/libs -name 'vanguard-*.jar' ! -name '*-sources.jar' | head -n 1)" >> $GITHUB_ENV
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
