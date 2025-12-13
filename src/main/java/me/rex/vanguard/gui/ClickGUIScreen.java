@@ -1,9 +1,12 @@
 package me.rex.vanguard.gui;
 
+import me.rex.vanguard.manager.ModuleManager;
 import me.rex.vanguard.module.Category;
+import me.rex.vanguard.module.Module;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
+import org.lwjgl.glfw.GLFW;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +49,10 @@ public class ClickGUIScreen extends Screen {
 
     @Override
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
+        if(keyCode == GLFW.GLFW_KEY_ESCAPE){
+            ModuleManager.INSTANCE.getModuleByName("ClickGUI").toggle();
+            return true;
+        }
         this.frames.forEach(component -> component.onKeyPressed(keyCode));
         return super.keyPressed(keyCode, scanCode, modifiers);
     }
@@ -61,5 +68,11 @@ public class ClickGUIScreen extends Screen {
     public boolean mouseDragged(double mouseX, double mouseY, int button, double deltaX, double deltaY) {
         this.frames.forEach(component -> component.mouseDragged(mouseX, mouseY));
         return super.mouseDragged(mouseX, mouseY, button, deltaX, deltaY);
+    }
+
+    @Override
+    public boolean keyReleased(int keyCode, int scanCode, int modifiers) {
+        if(keyCode == GLFW.GLFW_KEY_ESCAPE) return true;
+        return super.keyReleased(keyCode, scanCode, modifiers);
     }
 }

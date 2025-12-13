@@ -1,5 +1,6 @@
 package me.rex.vanguard;
 
+import me.rex.vanguard.gui.ClickGUIScreen;
 import me.rex.vanguard.manager.ConfigManager;
 import me.rex.vanguard.manager.EventManager;
 import me.rex.vanguard.event.events.KeyPressEvent;
@@ -33,7 +34,7 @@ public class VanguardClient implements ClientModInitializer, ModInitializer{
 	}
 
 	public void onKeyPress(int key, int action){
-		if(mc.player == null) return;
+		if(mc.player == null || (mc.currentScreen instanceof ClickGUIScreen && key == GLFW.GLFW_KEY_ESCAPE)) return;
 		if(action == GLFW.GLFW_PRESS) EventManager.INSTANCE.getEventBus().post(new KeyPressEvent(key));
 	}
 

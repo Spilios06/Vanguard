@@ -31,8 +31,5 @@ public class ClickGUI extends Module {
     @Subscribe
     public void onKeyPress(KeyPressEvent event){
         super.onKeyPress(event);
-        if(event.key == GLFW.GLFW_KEY_ESCAPE && this.mc.currentScreen instanceof ClickGUIScreen){
-            this.toggle();
-        }
     }
 }
