@@ -13,6 +13,7 @@ import me.rex.vanguard.module.modules.misc.FastPlace;
 import me.rex.vanguard.module.modules.misc.TestingPlayer;
 import me.rex.vanguard.module.modules.movement.*;
 import me.rex.vanguard.module.modules.player.AutoRespawn;
+import me.rex.vanguard.module.modules.render.ViewmodelChanger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +35,7 @@ public class ModuleManager implements Jsonable {
         modules.add(new ReverseStep());
 
         //RENDER
+        modules.add(new ViewmodelChanger());
 
         //PLAYER
         modules.add(new AutoRespawn());
