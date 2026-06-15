@@ -4,6 +4,7 @@ import me.rex.vanguard.module.Module;
 
 public class BindSetting extends Setting{
     public int value;
+    public Module module;
 
     public BindSetting(int key, String name) {
         super(name);
@@ -15,6 +16,7 @@ public class BindSetting extends Setting{
     }
 
     public void setValue(int value, Module module) {
+        this.value = value;
         module.key = value;
     }
 
@@ -26,6 +28,7 @@ public class BindSetting extends Setting{
     @Override
     public void setValue(Object value) {
         this.value = (int) value;
+        if (module != null) module.key = (int) value;
     }
 
     @Override

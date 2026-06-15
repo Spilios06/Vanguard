@@ -1,14 +1,15 @@
 package me.rex.vanguard.settings;
 
 public class NumberSetting extends Setting{
-    public double min, max, defaultValue;
+    public double min, max, defaultValue, increment;
     public double value;
 
-    public NumberSetting(String name, double min, double max, double defaultValue) {
+    public NumberSetting(String name, double min, double max, double defaultValue, double increment) {
         super(name);
         this.min = min;
         this.max = max;
         this.defaultValue = defaultValue;
+        this.increment = increment;
         this.value = defaultValue;
     }
     public static double clamp(double value, double min, double max){
@@ -30,16 +31,16 @@ public class NumberSetting extends Setting{
     }
 
     public void setValueDouble(double value){
+        value = Math.round(value / this.increment) * this.increment;
         value = clamp(value, this.min, this.max);
-        value = Math.round(value);
         this.value = value;
     }
 
     @Override
     public void setValue(Object value) {
-        value = clamp((double) value, this.min, this.max);
-        value  = Math.round((double) value);
-        this.value = (double) value;
+        double v = Math.round((double) value / this.increment) * this.increment;
+        v = clamp(v, this.min, this.max);
+        this.value = v;
     }
 
     @Override

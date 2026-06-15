@@ -7,6 +7,9 @@
 		"MixinClientConnection",
 		"MinecraftClientMixin"
 	],
+	"client": [
+		"MixinHeldItemRenderer"
+	],
 	"injectors": {
 		"defaultRequire": 1
 	}

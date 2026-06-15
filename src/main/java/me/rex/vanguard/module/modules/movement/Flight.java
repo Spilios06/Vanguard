@@ -7,7 +7,7 @@ import me.rex.vanguard.settings.BoolSetting;
 import me.rex.vanguard.settings.NumberSetting;
 
 public class Flight extends Module {
-    public NumberSetting speed = new NumberSetting("Speed", 0, 10, 2);
+    public NumberSetting speed = new NumberSetting("Speed", 0, 10, 2, 1);
     public BoolSetting bypass = new BoolSetting("Anti Kick", false);
     public BindSetting bind = new BindSetting(-1, "Bind");
     public Flight() {

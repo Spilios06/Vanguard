@@ -8,7 +8,7 @@ import me.rex.vanguard.settings.EnumSetting;
 import me.rex.vanguard.settings.NumberSetting;
 
 public class AutoCrystal extends Module {
-    public NumberSetting placeDistance = new NumberSetting("Place Distance", 1, 8, 6);
+    public NumberSetting placeDistance = new NumberSetting("Place Distance", 1, 8, 6, 0.5f);
     public BoolSetting silentSwitch = new BoolSetting("Silent Switch", false);
     public static EnumSetting renderType = new EnumSetting("Render Mode", renderMode.BOTH, renderMode.FILL, renderMode.OUTLINE, renderMode.BOTH);
     public BindSetting bind = new BindSetting(-1, "Keybind");
