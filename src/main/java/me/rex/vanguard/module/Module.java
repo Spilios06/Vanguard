@@ -9,6 +9,7 @@ import me.rex.vanguard.config.Jsonable;
 import me.rex.vanguard.event.events.KeyPressEvent;
 import me.rex.vanguard.manager.ConfigManager;
 import me.rex.vanguard.settings.Setting;
+import me.rex.vanguard.utils.ChatUtil;
 import net.minecraft.client.MinecraftClient;
 
 import java.util.ArrayList;
@@ -35,8 +36,10 @@ public abstract class Module implements Jsonable {
         else onDisable();
     }
     public void onEnable(){
+        ChatUtil.sendClientMessage(name + " on");
     }
     public void onDisable(){
+        ChatUtil.sendClientMessage(name + " off");
     }
     public void onTick(){
     }

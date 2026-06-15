@@ -5,11 +5,12 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import me.rex.vanguard.config.Jsonable;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class FriendManager implements Jsonable {
     public static FriendManager INSTANCE = new FriendManager();
-    public Set<String> friends;
+    public Set<String> friends = new HashSet<>();
 
     @Override
     public JsonObject toJson() {

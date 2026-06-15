@@ -18,6 +18,7 @@ public class Step extends Module {
     public void onDisable(){
         assert mc.player != null;
         mc.player.getAttributeInstance(EntityAttributes.GENERIC_STEP_HEIGHT).setBaseValue(stepHeight);
+        super.onDisable();
     }
 
     @Override
@@ -25,5 +26,6 @@ public class Step extends Module {
         if(mc.player == null) return;
         stepHeight = mc.player.getStepHeight();
         mc.player.getAttributeInstance(EntityAttributes.GENERIC_STEP_HEIGHT).setBaseValue(height.getValueFloat());
+        super.onEnable();
     }
 }

@@ -13,9 +13,4 @@ public class ViewmodelChanger extends Module {
         super("Viewmodel Changer", Category.RENDER, -1);
         addSettings(scale, bind);
     }
-
-    @Override
-    public void onEnable() {
-        
-    }
 }

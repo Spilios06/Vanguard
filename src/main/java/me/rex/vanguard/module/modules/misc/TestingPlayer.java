@@ -20,6 +20,7 @@ public class TestingPlayer extends Module{
         TestPlayerUtil testPlayer = new TestPlayerUtil(mc.player, name, 20, false);
         testPlayer.spawn();
         ENTITIES.add(testPlayer);
+        super.onEnable();
     }
     @Override
     public void onDisable(){
@@ -30,5 +31,6 @@ public class TestingPlayer extends Module{
             }
             return false;
         });
+        super.onDisable();
     }
 }
