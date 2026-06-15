@@ -10,6 +10,7 @@ import me.rex.vanguard.module.modules.combat.AutoCrystal;
 import me.rex.vanguard.module.modules.combat.Criticals;
 import me.rex.vanguard.module.modules.combat.KillAura;
 import me.rex.vanguard.module.modules.misc.FastPlace;
+import me.rex.vanguard.module.modules.misc.NoSlow;
 import me.rex.vanguard.module.modules.misc.TestingPlayer;
 import me.rex.vanguard.module.modules.movement.*;
 import me.rex.vanguard.module.modules.player.AutoRespawn;
@@ -33,6 +34,7 @@ public class ModuleManager implements Jsonable {
         modules.add(new Velocity());
         modules.add(new Step());
         modules.add(new ReverseStep());
+        modules.add(new Strafe());
 
         //RENDER
         modules.add(new ViewmodelChanger());
@@ -43,6 +45,7 @@ public class ModuleManager implements Jsonable {
         //MISC
         modules.add(new TestingPlayer());
         modules.add(new FastPlace());
+        modules.add(new NoSlow());
 
         //CLIENT
         modules.add(new ClickGUI());
