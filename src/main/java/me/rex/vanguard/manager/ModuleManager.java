@@ -7,6 +7,7 @@ import me.rex.vanguard.module.Category;
 import me.rex.vanguard.module.Module;
 import me.rex.vanguard.module.modules.client.ClickGUI;
 import me.rex.vanguard.module.modules.combat.AutoCrystal;
+import me.rex.vanguard.module.modules.combat.AutoTotem;
 import me.rex.vanguard.module.modules.combat.Criticals;
 import me.rex.vanguard.module.modules.combat.KillAura;
 import me.rex.vanguard.module.modules.misc.FastPlace;
@@ -25,6 +26,7 @@ public class ModuleManager implements Jsonable {
     public ModuleManager(){
         //COMBAT
         modules.add(new AutoCrystal());
+        modules.add(new AutoTotem());
         modules.add(new KillAura());
         modules.add(new Criticals());
 
@@ -86,8 +88,12 @@ public class ModuleManager implements Jsonable {
 
     @Override
     public void fromJson(JsonElement json) {
+        JsonObject obj = json.getAsJsonObject();
         for (Module module : modules) {
-            module.fromJson(json.getAsJsonObject().get(module.name));
+            JsonElement element = obj.get(module.name);
+            if (element != null) {
+                module.fromJson(element);
+            }
         }
     }
 

@@ -74,13 +74,17 @@ public abstract class Module implements Jsonable {
 
     @Override
     public void fromJson(JsonElement json) {
+        if (json == null) return;
         JsonObject object = json.getAsJsonObject();
-        String enabled = object.get("Enabled").getAsString();
-        if (Boolean.parseBoolean(enabled)) toggle();
+        JsonElement enabledElement = object.get("Enabled");
+        if (enabledElement != null && Boolean.parseBoolean(enabledElement.getAsString())) toggle();
         for (Setting setting : settings) {
-            try {
-                ConfigManager.setValueFromJson(setting, object.get(setting.name));
-            }catch (Throwable ignored) {
+            JsonElement element = object.get(setting.name);
+            if (element != null) {
+                try {
+                    ConfigManager.setValueFromJson(setting, element);
+                } catch (Throwable ignored) {
+                }
             }
         }
     }

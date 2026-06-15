@@ -40,8 +40,7 @@ public class ConfigManager {
                 setting.setValue(element.getAsInt());
             }
             case "Enum" -> {
-                str = element.getAsString();
-                setting.setValue(str.replace("_", " "));
+                setting.setValue(element.getAsString());
             }
         }
     }
