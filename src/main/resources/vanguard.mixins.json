@@ -9,7 +9,8 @@
 	],
 	"client": [
 		"MixinHeldItemRenderer",
-		"MixinClientPlayerEntity"
+		"MixinClientPlayerEntity",
+		"MixinStrafe"
 	],
 	"injectors": {
 		"defaultRequire": 1
